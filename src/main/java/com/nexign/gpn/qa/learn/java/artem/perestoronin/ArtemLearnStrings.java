@@ -6,6 +6,7 @@ import org.apache.commons.lang3.RegExUtils;
 import static java.lang.String.format;
 import static org.apache.commons.lang3.StringUtils.defaultIfBlank;
 import static org.apache.commons.lang3.StringUtils.defaultString;
+import static org.apache.commons.lang3.StringUtils.normalizeSpace;
 import static org.apache.commons.lang3.StringUtils.rightPad;
 
 public class ArtemLearnStrings implements LearnStrings {
@@ -19,7 +20,7 @@ public class ArtemLearnStrings implements LearnStrings {
      */
     @Override
     public String helloName(String name) {
-        return format("Привет, %s!", defaultIfBlank(name, "незнакомец"));
+        return format("Привет, %s!", defaultIfBlank(normalizeSpace(name), "незнакомец"));
     }
 
     /**
