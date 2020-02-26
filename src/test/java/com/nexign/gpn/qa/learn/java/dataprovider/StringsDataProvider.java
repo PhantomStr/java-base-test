@@ -45,6 +45,7 @@ public class StringsDataProvider {
                 {"zipzip", "zpzp"},
                 {"zip zap", "zp zp"},
                 {"zip z zap", "zp z zp"},
+                {"zip z p zap", "zp z p zp"},
                 {"zp z zap", "zp z zp"},
                 {"zp", "zp"},
                 {"test", "test"},
