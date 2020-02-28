@@ -3,8 +3,11 @@ package com.nexign.gpn.qa.learn.java.anna.khvorostyanova;
 import com.nexign.gpn.qa.learn.java.LearnCollections;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class AnyutaLearnCollections implements LearnCollections {
+
     /**
      * Получив строку с текстом, вернуть Map<String,Integer> с количеством повторений каждого слова (игнорируя регистр).
      *
@@ -44,6 +47,14 @@ public class AnyutaLearnCollections implements LearnCollections {
      */
     @Override
     public Reverse makeReverse(String str) throws NullPointerException {
-        return null;
+        return new Reverse(str) {
+            @Override
+            public Iterator<String> iterator() {
+                return new LinkedList<>(Stream.of(str.replaceAll("[!?,]", "")
+                        .split("[\\s]"))
+                        .collect(Collectors.toList()))
+                        .descendingIterator();
+            }
+        };
     }
 }
