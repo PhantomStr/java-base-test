@@ -6,6 +6,7 @@ import java.time.Clock;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class AnyutaLearnDateTime implements LearnDateTime {
     /**
@@ -38,8 +39,8 @@ public class AnyutaLearnDateTime implements LearnDateTime {
      */
     @Override
     public String localDateAtZone(String zoneName) {
-        //с точки зрения математики это не совсем верно, непонятно по постановке
         return LocalDateTime.now(systemClock(zoneName))
-                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:00"));
+                .truncatedTo(ChronoUnit.MINUTES)
+                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
     }
 }
