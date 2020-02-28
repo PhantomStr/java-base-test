@@ -7,7 +7,7 @@ import static org.apache.commons.lang3.RegExUtils.removeAll;
 public class AnyutaLearnStrings implements com.nexign.gpn.qa.learn.java.LearnStrings {
     @Override
     public String helloName(String name) {
-        return String.format("Привет, %s!",StringUtils.defaultIfBlank(removeAll(name,"[\\s\\u00A0\\t\\r]"), "незнакомец"));
+        return String.format("Привет, %s!",StringUtils.defaultIfBlank(StringUtils.normalizeSpace(name), "незнакомец"));
         }
 
 
@@ -30,10 +30,6 @@ public class AnyutaLearnStrings implements com.nexign.gpn.qa.learn.java.LearnStr
     @Override
     public String zipZap(String str) {
         String pattern = "z[a-zA-z]p";
-        String trimmedString;
-        if (str != null) {
-            trimmedString = str.replaceAll(pattern, "zp");
-        } else trimmedString="";
-        return trimmedString;
+        return StringUtils.defaultIfBlank(str,"").replaceAll(pattern, "zp");
     }
 }

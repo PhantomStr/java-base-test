@@ -18,9 +18,6 @@ public class AnyutaLearnArrays implements LearnArrays {
     public int matchUp(int[] nums1, int[] nums2) throws IllegalArgumentException {
         if (nums1 == null || nums2 == null || nums1.length != nums2.length)
             throw new IllegalArgumentException("невалидные входные параметры");
-        //      for (int i = 0; i < nums1.length; i++) {
-        //          if (Math.abs(nums1[i] - nums2[i]) <= 2 && nums1[i] != nums2[i]) diffRuleCounter += 1;
-        //       }
         return (int) IntStream.range(0, nums1.length)
                 .filter(i -> (Math.abs(nums1[i] - nums2[i]) <= 2) && (nums1[i] != nums2[i])).count();
     }
