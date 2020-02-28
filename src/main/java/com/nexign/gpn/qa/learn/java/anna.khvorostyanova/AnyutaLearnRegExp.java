@@ -3,6 +3,7 @@ package com.nexign.gpn.qa.learn.java.anna.khvorostyanova;
 import com.nexign.gpn.qa.learn.java.LearnRegExp;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,19 +19,32 @@ public class AnyutaLearnRegExp implements LearnRegExp {
      */
     @Override
     public String findPhoneNumber(String str) {
-        String sb = "";
+        String phone = "";
+        ArrayList<String> arr = new ArrayList<>();
         String newStr = str.replaceAll("[^a-zA-ZА-Яа-я0-9]", "");
         Pattern pattern = Pattern.compile("([78]?[34[8-9]]([0-9]{9}))");
         Matcher matcher = pattern.matcher(newStr);
-        if (matcher.find()) {
-            String phone = matcher.group();
-            if (phone.length()>10) phone = StringUtils.substring(phone,1);
-            sb = new StringBuilder(phone)
-                    .insert(0, "+7(")
-                    .insert(6,")")
-                    .insert(10,"-")
-                    .insert(13, "-").toString();
+        //по-любому можно упростить и жить без двух циклов
+        while (matcher.find()) {
+            arr.add(matcher.group());
         }
-        return sb;
+        for (String el:arr) {
+            if (el.length()==11) {
+                phone = makeMyPhoneFormat(StringUtils.substring(el, 1));
+            }
+            else if (el.length()==10) {
+                phone = makeMyPhoneFormat(el);
+            }
+        }
+        return phone;
 }
+//можно через printf или String.format, но уже не было сил думать :)
+    private  String makeMyPhoneFormat(String str){
+
+        return new StringBuilder(str)
+                .insert(0, "+7(")
+                .insert(6,")")
+                .insert(10,"-")
+                .insert(13, "-").toString();
+    }
 }
