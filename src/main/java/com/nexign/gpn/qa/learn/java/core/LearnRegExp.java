@@ -1,4 +1,4 @@
-package com.nexign.gpn.qa.learn.java;
+package com.nexign.gpn.qa.learn.java.core;
 
 public interface LearnRegExp {
 
