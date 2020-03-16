@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import static java.lang.String.format;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public abstract class LearnStringsTest extends AbstractTest<LearnStrings> {
+public abstract class LearnStringsTest extends AbstractTest<com.nexign.gpn.qa.learn.java.LearnStrings> {
 
     @Test(dataProvider = "names", dataProviderClass = StringsDataProvider.class)
     void helloName(String name, String expected) {
