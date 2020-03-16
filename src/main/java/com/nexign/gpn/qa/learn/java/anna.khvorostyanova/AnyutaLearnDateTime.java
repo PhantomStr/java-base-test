@@ -1,6 +1,6 @@
 package com.nexign.gpn.qa.learn.java.anna.khvorostyanova;
 
-import com.nexign.gpn.qa.learn.java.LearnDateTime;
+import com.nexign.gpn.qa.learn.java.core.LearnDateTime;
 
 import java.time.Clock;
 import java.time.LocalDateTime;

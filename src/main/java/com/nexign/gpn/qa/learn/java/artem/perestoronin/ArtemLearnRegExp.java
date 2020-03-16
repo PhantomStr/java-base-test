@@ -1,6 +1,6 @@
 package com.nexign.gpn.qa.learn.java.artem.perestoronin;
 
-import com.nexign.gpn.qa.learn.java.LearnRegExp;
+import com.nexign.gpn.qa.learn.java.core.LearnRegExp;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

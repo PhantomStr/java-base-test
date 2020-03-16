@@ -1,5 +1,5 @@
 package com.nexign.gpn.qa.learn.java.anna.khvorostyanova;
-import com.nexign.gpn.qa.learn.java.LearnArrays;
+import com.nexign.gpn.qa.learn.java.core.LearnArrays;
 
 import java.util.stream.IntStream;
 

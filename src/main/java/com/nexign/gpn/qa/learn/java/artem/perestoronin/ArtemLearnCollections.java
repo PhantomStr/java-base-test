@@ -1,6 +1,6 @@
 package com.nexign.gpn.qa.learn.java.artem.perestoronin;
 
-import com.nexign.gpn.qa.learn.java.LearnCollections;
+import com.nexign.gpn.qa.learn.java.core.LearnCollections;
 import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;
 

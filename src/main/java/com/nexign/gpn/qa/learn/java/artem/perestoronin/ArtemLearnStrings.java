@@ -1,6 +1,6 @@
 package com.nexign.gpn.qa.learn.java.artem.perestoronin;
 
-import com.nexign.gpn.qa.learn.java.LearnStrings;
+import com.nexign.gpn.qa.learn.java.core.LearnStrings;
 import org.apache.commons.lang3.RegExUtils;
 
 import static java.lang.String.format;
@@ -44,7 +44,7 @@ public class ArtemLearnStrings implements LearnStrings {
      */
     @Override
     public String zipZap(String str) {
-        return RegExUtils.replacePattern(defaultString(str, ""), "z.p", "zp");
+        return RegExUtils.replacePattern(defaultString(str, ""), "z[a-zA-Z]p", "zp");
     }
 
 }

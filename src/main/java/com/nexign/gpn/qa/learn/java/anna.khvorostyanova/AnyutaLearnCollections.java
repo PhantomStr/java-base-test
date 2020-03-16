@@ -1,6 +1,6 @@
 package com.nexign.gpn.qa.learn.java.anna.khvorostyanova;
 
-import com.nexign.gpn.qa.learn.java.LearnCollections;
+import com.nexign.gpn.qa.learn.java.core.LearnCollections;
 
 import java.util.*;
 import java.util.stream.Collectors;

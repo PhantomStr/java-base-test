@@ -1,6 +1,6 @@
 package com.nexign.gpn.qa.learn.java.anna.khvorostyanova;
 
-import com.nexign.gpn.qa.learn.java.LearnRegExp;
+import com.nexign.gpn.qa.learn.java.core.LearnRegExp;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;

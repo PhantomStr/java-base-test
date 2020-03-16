@@ -1,14 +1,13 @@
 package com.nexign.gpn.qa.learn.java.anna.khvorostyanova;
 
+import com.nexign.gpn.qa.learn.java.core.LearnStrings;
 import org.apache.commons.lang3.StringUtils;
 
-import static org.apache.commons.lang3.RegExUtils.removeAll;
-
-public class AnyutaLearnStrings implements com.nexign.gpn.qa.learn.java.LearnStrings {
+public class AnyutaLearnStrings implements LearnStrings {
     @Override
     public String helloName(String name) {
-        return String.format("Привет, %s!",StringUtils.defaultIfBlank(StringUtils.normalizeSpace(name), "незнакомец"));
-        }
+        return String.format("Привет, %s!", StringUtils.defaultIfBlank(StringUtils.normalizeSpace(name), "незнакомец"));
+    }
 
 
     /**
@@ -21,7 +20,7 @@ public class AnyutaLearnStrings implements com.nexign.gpn.qa.learn.java.LearnStr
      */
     @Override
     public String atFirst(String str) {
-        if (str==null || str.equals("")) return "@@";
+        if (str == null || str.equals("")) return "@@";
         int len = str.length();
         if (len >= 2) return str.substring(0, 2);
         else return str + "@";
@@ -30,6 +29,7 @@ public class AnyutaLearnStrings implements com.nexign.gpn.qa.learn.java.LearnStr
     @Override
     public String zipZap(String str) {
         String pattern = "z[a-zA-z]p";
-        return StringUtils.defaultIfBlank(str,"").replaceAll(pattern, "zp");
+        return StringUtils.defaultIfBlank(str, "").replaceAll(pattern, "zp");
     }
+
 }
