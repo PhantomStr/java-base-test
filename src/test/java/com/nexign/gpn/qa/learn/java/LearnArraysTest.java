@@ -1,5 +1,6 @@
 package com.nexign.gpn.qa.learn.java;
 
+import com.nexign.gpn.qa.learn.java.core.LearnArrays;
 import com.nexign.gpn.qa.learn.java.dataprovider.ArraysDataProvider;
 import org.testng.annotations.Test;
 

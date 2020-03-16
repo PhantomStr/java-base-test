@@ -1,4 +1,4 @@
-package com.nexign.gpn.qa.learn.java;
+package com.nexign.gpn.qa.learn.java.core;
 
 /**
  * для более продуктивного времяпрепровождения рекомендуется изучить {@link org.apache.commons.lang3.StringUtils} и {@link org.apache.commons.lang3.RegExUtils}

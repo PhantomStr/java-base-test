@@ -1,4 +1,4 @@
-package com.nexign.gpn.qa.learn.java;
+package com.nexign.gpn.qa.learn.java.core;
 
 import java.util.List;
 import java.util.Map;

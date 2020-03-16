@@ -1,5 +1,6 @@
 package com.nexign.gpn.qa.learn.java;
 
+import com.nexign.gpn.qa.learn.java.core.LearnRegExp;
 import com.nexign.gpn.qa.learn.java.dataprovider.RegExpDataProvider;
 import org.testng.annotations.Test;
 
