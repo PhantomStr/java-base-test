@@ -8,7 +8,7 @@ public class AdapterMain {
     private static final Logger log = getLogger("my logger");
 
     public static void main(String[] args) {
-        // new Worker(log).doSomething(); //не можем создать класс так как ожидается CustomLogger
+         //new Worker(log).doSomething(); //не можем создать класс так как ожидается CustomLogger
     }
 
 }

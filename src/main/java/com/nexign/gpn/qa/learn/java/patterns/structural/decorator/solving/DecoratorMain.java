@@ -21,6 +21,9 @@ public class DecoratorMain {
         log.info(encrypted.readData());
 
         encrypted.doSomethingElse();
+
+        DataSource logged = new MyDecorator(dataSource);
+        logged.readData();
     }
 
 }
