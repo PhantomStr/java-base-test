@@ -1,15 +1,15 @@
-package com.nexign.gpn.qa.learn.java.artem.perestoronin;
+package com.nexign.gpn.qa.learn.java.anton.agafonov;
 
 import com.nexign.gpn.qa.learn.java.core.LearnStrings;
-import org.apache.commons.lang3.RegExUtils;
 
-import static java.lang.String.format;
-import static org.apache.commons.lang3.StringUtils.defaultIfBlank;
-import static org.apache.commons.lang3.StringUtils.defaultString;
+import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 import static org.apache.commons.lang3.StringUtils.normalizeSpace;
-import static org.apache.commons.lang3.StringUtils.rightPad;
+import static org.apache.commons.lang3.StringUtils.replaceAll;
 
-public class ArtemLearnStrings implements LearnStrings {
+/**
+ * для более продуктивного времяпрепровождения рекомендуется изучить {@link org.apache.commons.lang3.StringUtils} и {@link org.apache.commons.lang3.RegExUtils}
+ */
+public class AntonLearnStrings implements LearnStrings {
 
     /**
      * Дано имя, например «Боб», верните приветствие в форме «Привет, Боб!».
@@ -20,7 +20,11 @@ public class ArtemLearnStrings implements LearnStrings {
      */
     @Override
     public String helloName(String name) {
-        return format("Привет, %s!", defaultIfBlank(normalizeSpace(name), "незнакомец"));
+
+        if (name == null || normalizeSpace(name).equals("")) {
+            return "Привет, незнакомец!";
+        }
+        return "Привет, " + name + "!";
     }
 
     /**
@@ -29,10 +33,22 @@ public class ArtemLearnStrings implements LearnStrings {
      *
      * @param str строка
      * @return ст
+     * null -> "@@"
      */
     @Override
     public String atFirst(String str) {
-        return rightPad(defaultString(str, ""), 2, '@').substring(0, 2);
+        if (str == null) {
+            return "@@";
+        }
+
+        switch (str.length()){
+            case 0:
+                return "@@";
+            case 1:
+                return str.substring(0,1) + "@";
+            default:
+                return str.substring(0,2);
+        }
     }
 
     /**
@@ -41,10 +57,12 @@ public class ArtemLearnStrings implements LearnStrings {
      *
      * @param str zipXzap
      * @return zpXzp
+     * null -> ""
      */
     @Override
     public String zipZap(String str) {
-        return RegExUtils.replacePattern(defaultString(str, ""), "z[a-zA-Z]p", "zp");
+
+        return replaceAll(defaultIfNull(str,""),"[zZ]\\S[Pp]","zp");
     }
 
 }

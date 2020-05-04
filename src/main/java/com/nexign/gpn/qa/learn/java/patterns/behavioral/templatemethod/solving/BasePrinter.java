@@ -8,9 +8,13 @@ import static org.testng.reporters.Files.readFile;
 
 public abstract class BasePrinter {
     public void print(File file) throws IOException {
-        String content = readFile(file);
-        validate(content);
-        getPrinter().write(convert(file));
+        String content = getContent(file); //1
+        validate(content); //2
+        getPrinter().write(convert(file)); //3, 4
+    }
+
+    private String getContent(File file) throws IOException {
+        return readFile(file);
     }
 
     protected abstract byte[] convert(File file) throws IOException;

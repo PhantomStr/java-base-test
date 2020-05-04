@@ -1,14 +1,16 @@
-package com.nexign.gpn.qa.learn.java.anna.khvorostyanova;
+package com.nexign.gpn.qa.learn.java.anton.agafonov;
 
 import com.nexign.gpn.qa.learn.java.core.LearnDateTime;
 
 import java.time.Clock;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 
-public class AnyutaLearnDateTime implements LearnDateTime {
+/**
+ * В Java 8 DateTime API реализовано множество классов и методов, которые существенно упрощают работу со временем и датами.({@link java.time})
+ * <p>
+ * <a href="https://jon.com.ua/blog/vvedenie-v-rabotu-s-datoj-i-vremenem-v-java-8/">Хорошая статья для понимания.</a>
+ */
+public class AntonLearnDateTime implements LearnDateTime {
     /**
      * Получив имя временной зоны вернуть ZoneId данной зоны.
      *
@@ -17,8 +19,9 @@ public class AnyutaLearnDateTime implements LearnDateTime {
      */
     @Override
     public ZoneId zoneIdOf(String zoneName) {
-        return ZoneId.of(zoneName);
+        return null;
     }
+
     /**
      * Получив имя временной зоны вернуть системные часы в данной временной зоны.
      *
@@ -27,9 +30,9 @@ public class AnyutaLearnDateTime implements LearnDateTime {
      */
     @Override
     public Clock systemClock(String zoneName) {
-        return Clock.system(zoneIdOf(zoneName));
-        //:D не зря ж писали
+        return null;
     }
+
     /**
      * Получив имя временной зоны, создать текущий LocalDateTime
      * и вернуть соответствующий LocalDateTime для полученной зоны в  формате "yyyy-MM-dd'T'HH:mm:ss" c округлением времени до целых минут
@@ -39,8 +42,7 @@ public class AnyutaLearnDateTime implements LearnDateTime {
      */
     @Override
     public String localDateAtZone(String zoneName) {
-        return LocalDateTime.now(systemClock(zoneName))
-                .truncatedTo(ChronoUnit.MINUTES)
-                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
+        return null;
     }
+
 }

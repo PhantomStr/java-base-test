@@ -48,7 +48,7 @@ public class StrategyMain {
 
     private void executeTransaction(Transaction transaction) {
         if (!checker.check(transaction)) {
-            log.error("транзакция {} не будет обработана, так как некорректно заполнена", transaction);
+            log.warn("транзакция {} не будет обработана, так как некорректно заполнена", transaction);
             return;
         }
         executor.execute(transaction);

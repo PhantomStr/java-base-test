@@ -14,8 +14,7 @@ public class VisaTransactionStrategy implements TransactionStrategy {
 
     @Override
     public boolean isAcceptable(Transaction transaction) {
-        return transaction.getRecipientAccount().startsWith("4")
-                && transaction.getType().equals(TransactionType.VISA);
+        return transaction.getRecipientAccount().startsWith("4");
     }
 
     private void validate(Transaction transaction) {

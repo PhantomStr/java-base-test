@@ -14,14 +14,13 @@ public class MasterCardTransactionStrategy implements TransactionStrategy {
 
     @Override
     public boolean isAcceptable(Transaction transaction) {
-        return transaction.getRecipientAccount().startsWith("5")
-                && transaction.getType().equals(TransactionType.MASTERCARD);
+        return transaction.getRecipientAccount().startsWith("5");
     }
 
     private void validate(Transaction transaction) {
-//        if (transaction.getType() != TransactionType.MASTERCARD) {
-//            log.warn("wrong Transaction type! Please check it! Try execute this transaction with MasterCard payment system");
-//        }
+        if (transaction.getType() != TransactionType.MASTERCARD) {
+            log.warn("wrong Transaction type! Please check it! Try execute this transaction with MasterCard payment system");
+        }
     }
 
 }
