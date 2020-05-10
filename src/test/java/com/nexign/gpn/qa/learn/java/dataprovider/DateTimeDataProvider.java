@@ -31,7 +31,7 @@ public class DateTimeDataProvider {
     @DataProvider
     public Object[][] localDateAtZone() {
         return new Object[][]{
-                {"Australia/Sydney", 11},
+                {"Australia/Sydney", 10},
                 {"UTC", 0},
                 {"America/Costa_Rica", -6},
         };

@@ -4,6 +4,10 @@ import com.nexign.gpn.qa.learn.java.core.LearnDateTime;
 
 import java.time.Clock;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
+import static java.time.LocalDateTime.now;
+import static java.time.temporal.ChronoUnit.MINUTES;
 
 /**
  * В Java 8 DateTime API реализовано множество классов и методов, которые существенно упрощают работу со временем и датами.({@link java.time})
@@ -19,7 +23,8 @@ public class AntonLearnDateTime implements LearnDateTime {
      */
     @Override
     public ZoneId zoneIdOf(String zoneName) {
-        return null;
+        return ZoneId.of(zoneName);
+
     }
 
     /**
@@ -30,7 +35,7 @@ public class AntonLearnDateTime implements LearnDateTime {
      */
     @Override
     public Clock systemClock(String zoneName) {
-        return null;
+        return Clock.system(zoneIdOf(zoneName));
     }
 
     /**
@@ -42,7 +47,9 @@ public class AntonLearnDateTime implements LearnDateTime {
      */
     @Override
     public String localDateAtZone(String zoneName) {
-        return null;
+        return now(zoneIdOf(zoneName))
+                .truncatedTo(MINUTES)
+                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
     }
 
 }
